@@ -7,7 +7,7 @@ import java.util.*;
 import com.sun.javafx.runtime.SystemProperties;
 
 //Main Program
-class tes {
+class GateAssignment {
     public static List<Flight> queueList = new ArrayList<Flight>();
     public static List<Flight> ungatedList = new ArrayList<Flight>();
     public static List<Integer> gateScheduler = new ArrayList<Integer>(); 
