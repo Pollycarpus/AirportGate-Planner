@@ -1,3 +1,7 @@
+/**
+ * @author Rabbi Fijar Mayoza -- 13516081 -- Teknik Informatika ITB
+ */
+
 import java.util.*;
 
 import com.sun.javafx.runtime.SystemProperties;
