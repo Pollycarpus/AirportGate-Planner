@@ -7,7 +7,7 @@ import java.util.*;
 import com.sun.javafx.runtime.SystemProperties;
 
 //Main Program
-class GateAssignment {
+class tes {
     public static List<Flight> queueList = new ArrayList<Flight>();
     public static List<Flight> ungatedList = new ArrayList<Flight>();
     public static List<Integer> gateScheduler = new ArrayList<Integer>(); 
@@ -59,7 +59,7 @@ class GateAssignment {
         //Algoritma
         
         int m;
-        int gNum;
+        int gNum, min, idmin;
         boolean found;
 
         Scanner input = new Scanner(System.in);
@@ -75,11 +75,16 @@ class GateAssignment {
             gNum = 1;
             //System.out.println(queueList.get(i).getId());
             found = false;
-            while(gNum <= gateScheduler.size() && !found){
+            idmin = 0;
+            min = 99999;
+            for(gNum = 1; gNum <= gateScheduler.size(); gNum++){
                 if((gateScheduler.get(gNum - 1) <= queueList.get(i).getArr().convertToSecond())){
+                    int x = queueList.get(i).getArr().convertToSecond() - gateScheduler.get(gNum - 1);
+                    if(x < min){
+                        min = x;
+                        idmin = gNum - 1;
+                    }
                     found = true;
-                }else{
-                    gNum++;
                 }
             }
             if(found){
@@ -97,8 +102,8 @@ class GateAssignment {
                         }
                     }
                 }
-                queueList.get(i).setGate(gNum);
-                gateScheduler.set(gNum - 1, queueList.get(i).getDep().convertToSecond());
+                queueList.get(i).setGate(idmin+1);
+                gateScheduler.set(idmin, queueList.get(i).getDep().convertToSecond());
             } else {
                 Flight temp = new Flight();
                 temp = queueList.remove(i);
