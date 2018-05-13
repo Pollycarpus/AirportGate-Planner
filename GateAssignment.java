@@ -73,7 +73,7 @@ class GateAssignment {
 
         for(int i = 0; i < queueList.size(); i++){
             gNum = 1;
-            System.out.println(queueList.get(i).getId());
+            //System.out.println(queueList.get(i).getId());
             found = false;
             while(gNum <= gateScheduler.size() && !found){
                 if((gateScheduler.get(gNum - 1) <= queueList.get(i).getArr().convertToSecond())){
